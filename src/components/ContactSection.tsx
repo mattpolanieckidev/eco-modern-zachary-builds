@@ -87,15 +87,15 @@ const ContactSection = () => {
               <div>
                 <h4 className="text-lg font-semibold mb-2">Our Office</h4>
                 <p className="text-gray-700">
-                  123 Eco Design Avenue<br />
-                  Portland, OR 97201<br />
+                  614 Hempstead Gardens Drive<br />
+                  West Hempstead, N.Y. 11552<br />
                   United States
                 </p>
               </div>
               <div>
                 <h4 className="text-lg font-semibold mb-2">Contact Details</h4>
                 <p className="text-gray-700 mb-2">
-                  <span className="font-semibold">Phone:</span> (503) 555-0123
+                  <span className="font-semibold">Phone:</span> 631-900-ZACH (631-900-9224)
                 </p>
                 <p className="text-gray-700 mb-2">
                   <span className="font-semibold">Email:</span>{" "}

@@ -27,15 +27,21 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+              <h4 className="text-lg font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
-              {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Services", href: "/#services" },
+                { label: "Projects", href: "/#projects" },
+                { label: "Contact", href: "/#contact" },
+              ].map((item) => (
+                <li key={item.label}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={item.href}
                     className="text-gray-400 hover:text-eco-green-400 transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -43,14 +49,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+              <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <address className="text-gray-400 not-italic">
-              123 Eco Design Avenue<br />
-              Portland, OR 97201<br />
+              614 Hempstead Gardens Drive<br />
+              West Hempstead, N.Y. 11552<br />
               United States
             </address>
             <p className="text-gray-400 mt-4">
-              <span className="block">Phone: (503) 555-0123</span>
+              <span className="block">Phone: 631-900-ZACH (631-900-9224)</span>
               <span className="block">Email: info@zacharyethan.com</span>
             </p>
           </div>
