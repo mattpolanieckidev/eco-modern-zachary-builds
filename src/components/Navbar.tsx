@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,24 +31,30 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <h1 className={`font-serif font-bold text-xl md:text-2xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
             ZACHARY ETHAN<span className="text-eco-green-500">.</span>
           </h1>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+          {[
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+            { label: "Services", href: "/#services" },
+            { label: "Projects", href: "/#projects" },
+            { label: "Contact", href: "/#contact" },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              to={item.href}
               className={`font-medium hover:text-eco-green-500 transition-colors ${
                 isScrolled ? "text-gray-700" : "text-white"
               }`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </nav>
 
@@ -93,15 +100,21 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {["Home", "About", "Services", "Projects", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+            {[
+              { label: "Home", href: "/" },
+              { label: "About", href: "/about" },
+              { label: "Services", href: "/#services" },
+              { label: "Projects", href: "/#projects" },
+              { label: "Contact", href: "/#contact" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
                 className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
             <Button className="bg-eco-green-500 hover:bg-eco-green-600 text-white w-full">
               Get in Touch
