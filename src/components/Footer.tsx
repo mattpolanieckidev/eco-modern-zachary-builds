@@ -1,5 +1,7 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import ScrollLink from "./ScrollLink";
 
 const Footer = () => {
   return (
