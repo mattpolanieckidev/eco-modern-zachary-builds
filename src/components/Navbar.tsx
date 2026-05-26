@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ScrollLink from "./ScrollLink";
+
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
