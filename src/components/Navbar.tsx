@@ -125,22 +125,41 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {[
-              { label: "Home", href: "/" },
-              { label: "About", href: "/about" },
-              { label: "Services", href: "/#services" },
-              { label: "Projects", href: "/#projects" },
-              { label: "Contact", href: "/#contact" },
-            ].map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <ScrollLink
+              to="/#services"
+              className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Services
+            </ScrollLink>
+            <ScrollLink
+              to="/#projects"
+              className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Projects
+            </ScrollLink>
+            <ScrollLink
+              to="/#contact"
+              className="font-medium text-gray-700 hover:text-eco-green-500 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </ScrollLink>
             <Button className="bg-eco-green-500 hover:bg-eco-green-600 text-white w-full">
               Get in Touch
             </Button>
