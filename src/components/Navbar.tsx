@@ -1,13 +1,16 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ScrollLink from "./ScrollLink";
 
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const useDarkText = isScrolled || !isHome;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,14 +30,14 @@ const Navbar = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
+        useDarkText
           ? "bg-white bg-opacity-95 shadow-md py-3"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <h1 className={`font-serif font-bold text-xl md:text-2xl ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+          <h1 className={`font-serif font-bold text-xl md:text-2xl ${useDarkText ? 'text-gray-800' : 'text-white'}`}>
             ZACHARY ETHAN<span className="text-eco-green-500">.</span>
           </h1>
         </Link>
@@ -44,7 +47,7 @@ const Navbar = () => {
           <Link
             to="/"
             className={`font-medium hover:text-eco-green-500 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
+              useDarkText ? "text-gray-700" : "text-white"
             }`}
           >
             Home
@@ -52,7 +55,7 @@ const Navbar = () => {
           <Link
             to="/about"
             className={`font-medium hover:text-eco-green-500 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
+              useDarkText ? "text-gray-700" : "text-white"
             }`}
           >
             About
@@ -60,7 +63,7 @@ const Navbar = () => {
           <ScrollLink
             to="/#services"
             className={`font-medium hover:text-eco-green-500 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
+              useDarkText ? "text-gray-700" : "text-white"
             }`}
           >
             Services
@@ -68,7 +71,7 @@ const Navbar = () => {
           <ScrollLink
             to="/#projects"
             className={`font-medium hover:text-eco-green-500 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
+              useDarkText ? "text-gray-700" : "text-white"
             }`}
           >
             Projects
@@ -76,7 +79,7 @@ const Navbar = () => {
           <ScrollLink
             to="/#contact"
             className={`font-medium hover:text-eco-green-500 transition-colors ${
-              isScrolled ? "text-gray-700" : "text-white"
+              useDarkText ? "text-gray-700" : "text-white"
             }`}
           >
             Contact
