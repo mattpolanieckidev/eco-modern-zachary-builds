@@ -1,5 +1,7 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import ScrollLink from "./ScrollLink";
 
 const Footer = () => {
   return (
@@ -27,24 +29,48 @@ const Footer = () => {
           </div>
 
           <div>
-              <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+            <h4 className="text-lg font-semibold mb-4">Navigation</h4>
             <ul className="space-y-2">
-              {[
-                { label: "Home", href: "/" },
-                { label: "About", href: "/about" },
-                { label: "Services", href: "/#services" },
-                { label: "Projects", href: "/#projects" },
-                { label: "Contact", href: "/#contact" },
-              ].map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="text-gray-400 hover:text-eco-green-400 transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-400 hover:text-eco-green-400 transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-gray-400 hover:text-eco-green-400 transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <ScrollLink
+                  to="/#services"
+                  className="text-gray-400 hover:text-eco-green-400 transition-colors"
+                >
+                  Services
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink
+                  to="/#projects"
+                  className="text-gray-400 hover:text-eco-green-400 transition-colors"
+                >
+                  Projects
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink
+                  to="/#contact"
+                  className="text-gray-400 hover:text-eco-green-400 transition-colors"
+                >
+                  Contact
+                </ScrollLink>
+              </li>
             </ul>
           </div>
 
