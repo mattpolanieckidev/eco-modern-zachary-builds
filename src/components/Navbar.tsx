@@ -41,23 +41,46 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          {[
-            { label: "Home", href: "/" },
-            { label: "About", href: "/about" },
-            { label: "Services", href: "/#services" },
-            { label: "Projects", href: "/#projects" },
-            { label: "Contact", href: "/#contact" },
-          ].map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className={`font-medium hover:text-eco-green-500 transition-colors ${
-                isScrolled ? "text-gray-700" : "text-white"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          <Link
+            to="/"
+            className={`font-medium hover:text-eco-green-500 transition-colors ${
+              isScrolled ? "text-gray-700" : "text-white"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className={`font-medium hover:text-eco-green-500 transition-colors ${
+              isScrolled ? "text-gray-700" : "text-white"
+            }`}
+          >
+            About
+          </Link>
+          <ScrollLink
+            to="/#services"
+            className={`font-medium hover:text-eco-green-500 transition-colors ${
+              isScrolled ? "text-gray-700" : "text-white"
+            }`}
+          >
+            Services
+          </ScrollLink>
+          <ScrollLink
+            to="/#projects"
+            className={`font-medium hover:text-eco-green-500 transition-colors ${
+              isScrolled ? "text-gray-700" : "text-white"
+            }`}
+          >
+            Projects
+          </ScrollLink>
+          <ScrollLink
+            to="/#contact"
+            className={`font-medium hover:text-eco-green-500 transition-colors ${
+              isScrolled ? "text-gray-700" : "text-white"
+            }`}
+          >
+            Contact
+          </ScrollLink>
         </nav>
 
         {/* Contact Button */}
